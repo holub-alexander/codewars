@@ -12,7 +12,7 @@
   Link: https://www.codewars.com/kata/55de6173a8fbe814ee000061/train/javascript
 */
 
-function unusedDigits(...arr) {
+function unusedDigits1(...arr) {
   let res = [];
   const numbers = '1234567890';
   const sortArr = arr
@@ -28,3 +28,10 @@ function unusedDigits(...arr) {
 
   return res.sort((a, b) => a - b).join('');
 }
+
+function unusedDigits2(...args) {
+  return '0123456789'.replace(new RegExp('[' + args.join('') + ']', 'g'), '');
+}
+
+console.log(unusedDigits1(12, 34, 56, 78)); // 09
+console.log(unusedDigits1(2015, 8, 26)); // 3479
