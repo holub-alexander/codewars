@@ -11,7 +11,7 @@
   "4556364607935616" --> "############5616"
       "64607935616" -->      "#######5616"
                 "1" -->                "1"
-                  "" -->                 ""
+                "" -->                 ""
 
   // "What was the name of your first pet?"
 
@@ -24,4 +24,14 @@
   Link: https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
 */
 
-const maskify = (str) => (str.length > 4 ? '#'.repeat(str.length - 4) + str.slice(-4) : str);
+const maskify1 = (str) => (str.length > 4 ? '#'.repeat(str.length - 4) + str.slice(-4) : str);
+
+console.log(maskify1('4556364607935616')); // ############5616
+console.log(maskify1('1')); // 1
+console.log(maskify1('11111')); // #1111
+
+const maskify2 = (str) => str.slice(0, -4).replace(/./g, '#') + str.slice(-4);
+
+console.log(maskify2('4556364607935616')); // ############5616
+console.log(maskify2('1')); // 1
+console.log(maskify2('11111')); // #1111
