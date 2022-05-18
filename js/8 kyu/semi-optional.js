@@ -18,8 +18,8 @@
   Link: https://www.codewars.com/kata/521cd52e790405a74800032c/train/javascript
 */
 
-const wrap = (str) => ({
-  value: str,
+const wrap = (value) => ({
+  'value': value,
 });
 
 console.log(wrap(343).value); // 343
